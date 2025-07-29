@@ -42,7 +42,8 @@ class EpubTranslator:
             for root, _, files in os.walk(temp_dir):
                 for file in files:
                     if file.endswith(('.html', '.xhtml')):
-                        files_to_translate.append(os.path.join(root, file))
+                        if file not in ['nav.html', 'nav.xhtml', 'toc.html', 'toc.xhtml']:
+                            files_to_translate.append(os.path.join(root, file))
             
             total_files = len(files_to_translate)
             

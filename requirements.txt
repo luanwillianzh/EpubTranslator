@@ -1,0 +1,5 @@
+g4f
+ebooklib
+beautifulsoup4
+rich
+customtkinter

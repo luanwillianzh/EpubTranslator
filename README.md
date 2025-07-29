@@ -1,6 +1,6 @@
-# Tradutor de EPUB com Gemini
+# Tradutor de EPUB com G4F
 
-Este projeto traduz arquivos EPUB para o português utilizando a API do Google Gemini.
+Este projeto traduz arquivos EPUB para o português utilizando a API do G4F.
 
 ## Instalação
 
@@ -24,7 +24,6 @@ python -m epub_translator.gui
 
 A interface permite que você:
 
-*   Insira sua chave da API Gemini.
 *   Selecione o arquivo EPUB de entrada.
 *   Defina o local e o nome do arquivo de saída.
 *   Acompanhe o progresso da tradução.
@@ -34,11 +33,10 @@ A interface permite que você:
 Execute o script a partir do diretório raiz do projeto:
 
 ```bash
-python -m epub_translator.main seu_livro.epub livro_traduzido.epub --api_key SUA_CHAVE_API
+python -m epub_translator.main seu_livro.epub livro_traduzido.epub
 ```
 
 **Argumentos:**
 
 *   `seu_livro.epub`: O caminho para o arquivo EPUB que você deseja traduzir.
 *   `livro_traduzido.epub`: O nome do arquivo de saída para o EPUB traduzido.
-*   `--api_key`: Sua chave de API do Google Gemini. Você pode obter uma no [Google AI Studio](https://aistudio.google.com/app/apikey).

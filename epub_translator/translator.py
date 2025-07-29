@@ -14,17 +14,20 @@ class EpubTranslator:
     def _translate_html_file(self, file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-        try:
+        certo = False
+        while certo == False:
+            try:
             # Adicionando um prompt mais claro para a tradução
-            prompt = f"Traduza o seguinte texto do inglês para o português, mantendo a formatação e o tom originais: '{content}'"
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[{"role": "user", "content": prompt}],
-                web_search=False
-            ).choices[0].message.content.split("```xml\n")[1].split("\n```")[0]
-        except Exception as e:
-            print(f"Aviso: Não foi possível traduzir o conteúdo: {content[:50]}... Erro: {e}")
-            response = content
+                prompt = f"Traduza o seguinte texto do inglês para o português, mantendo a formatação e o tom originais: '{content}'"
+                response = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[{"role": "user", "content": prompt}],
+                    web_search=False
+                ).choices[0].message.content.split("```xml\n")[1].split("\n```")[0]
+                certo = True
+            except Exception as e:
+                print(f"Aviso: Não foi possível traduzir o conteúdo: {content[:50]}... Erro: {e}")
+                response = content
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(response)

@@ -8,7 +8,7 @@ class App(ctk.CTk):
         super().__init__()
 
         self.title("Tradutor de EPUB")
-        self.geometry("500x350")
+        self.geometry("500x450")
 
         ctk.set_appearance_mode("System")
         ctk.set_default_color_theme("blue")
